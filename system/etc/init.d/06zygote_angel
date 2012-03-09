@@ -1,0 +1,15 @@
+#!/system/bin/sh
+
+# sleep a while and then start killing annoying processes registered to zygote
+sleep 10
+pkill -f pandora                               
+pkill -f youtube                                                   
+pkill -f deskclock 
+pkill -f comcast 
+pkill -f cpedia
+pkill -f thescore
+pkill -f transdroid
+pkill -f mangawatchman
+pkill -f coveroid
+pkill -f groupon 
+

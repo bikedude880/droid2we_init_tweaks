@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+mount -o remount,rw /system
+rm /system/etc/init.d/10gov_angel
+cp /system/xbin/gov/10gov_angel_conservative /system/etc/init.d/10gov_angel
+rm /system/lib/modules/symsearch.ko
+cp /system/xbin/gov/symsearch_normal.ko /system/lib/modules/symsearch.ko
+chmod 755 /system/etc/init.d/10gov_angel
+mount -o remount,ro /system
+echo 'You have chosen Conservative governor as your default. Please reboot to take effect'

@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+echo 37500 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+echo 95 /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+
+#kernel tweaks
+echo "NO_NORMALIZED_SLEEPER" > /sys/kernel/debug/sched_features
+echo "NO_FAIR_SLEEPERS" > /sys/kernel/debug/sched_features
+echo "NO_GENTLE_FAIR_SLEEPERS" > /sys/kernel/debug/sched_features

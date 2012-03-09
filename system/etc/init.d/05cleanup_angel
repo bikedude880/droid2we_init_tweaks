@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+# clean-up - needed for some ROMs
+pkill /system/bin/telnetd
+mount -o remount,rw -t yaffs2 `grep /system /proc/mounts | cut -d' ' -f1` /system
+rm /system/bin/pgrep
+rm /system/bin/telnetd
+rm /system/bin/crond
+mount -o remount,ro -t yaffs2 `grep /system /proc/mounts | cut -d' ' -f1` /system

@@ -1,0 +1,4 @@
+#!/system/bin/sh
+
+# disable logger - performance boost & save memory (hopefully)
+rm /dev/log/main

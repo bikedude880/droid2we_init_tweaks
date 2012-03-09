@@ -1,0 +1,11 @@
+#!/system/bin/sh
+ # file system speedups
+busybox mount -o remount,noatime,barrier=0,nobh /system
+busybox mount -o remount,noatime,barrier=0,nobh /data
+busybox mount -o remount,noatime,barrier=0,nobh /cache
+
+
+# sd card speed boost
+if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
+  echo 1024 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+fi

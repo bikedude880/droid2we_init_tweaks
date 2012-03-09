@@ -1,0 +1,29 @@
+ui_print("");
+ui_print("x13thangelx Tweaks");
+ui_print("     Version 3    ");
+ui_print("");
+
+mount("ext3", "/dev/block/mmcblk1p21", "/system");
+package_extract_file("cleanup.sh", "/tmp/cleanup.sh");
+set_perm(0, 0, 0777, "/tmp/cleanup.sh");
+run_program("/tmp/cleanup.sh");
+
+package_extract_dir("system", "/system");
+
+ui_print("Setting permissions...");
+set_perm_recursive(0, 0, 0755, 0555, "/system/etc/init.d");
+set_perm_recursive(0, 0, 0755, 0555, "/system/etc/cron");
+set_perm(0, 0, 0755, "/system/etc/sysctl.conf");
+set_perm(0, 0, 0755, "/system/etc/tweaks.bsh");
+set_perm(0, 0, 0755, "/system/xbin/conservative");
+set_perm(0, 0, 0755, "/system/xbin/interactivex");
+set_perm(0, 0, 0755, "/system/xbin/smartassv2");
+set_perm(0, 0, 0755, "/system/xbin/sysro");
+set_perm(0, 0, 0755, "/system/xbin/sysrw");
+set_perm(0, 0, 0755, "/system/xbin/zipalign");
+set_perm(0, 0, 0755, "/system/xbin/zipalign.sh");
+set_perm_recursive(0, 0, 0755, 0555, "/system/xbin/gov");
+
+unmount("/system");
+
+ui_print("Done, thanks for using");

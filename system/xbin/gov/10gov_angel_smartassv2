@@ -1,0 +1,16 @@
+#!/system/bin/sh
+
+sleep 20
+
+insmod /system/lib/modules/symsearch.ko
+insmod /system/lib/modules/cpufreq_smartassv2.ko
+echo smartassV2 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+sleep 10
+echo 80 > /sys/devices/system/cpu/cpufreq/smartassv2/max_cpu_load
+echo 20 > /sys/devices/system/cpu/cpufreq/smartassv2/min_cpu_load
+echo 48000 > /sys/devices/system/cpu/cpufreq/smartassv2/down_rate_us
+
+exit 0
+
+

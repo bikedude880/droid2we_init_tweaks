@@ -1,0 +1,22 @@
+#!/system/bin/sh
+
+#uncomment to use
+#might cause problems, use at your own risk
+#Optimized for x13thangelx's d2g
+
+#sleep 120
+#insmod /data/data/pt.com.darksun.milestoneoverclock/files/overclock.ko
+
+#voltages
+#echo 1 300000000 17 > /proc/overclock/mpu_opps
+#echo 2 645000000 34 > /proc/overclock/mpu_opps
+#echo 3 886000000 45 > /proc/overclock/mpu_opps
+#echo 4 1128000000 58> /proc/overclock/mpu_opps
+#echo 5 1350000000 68 > /proc/overclock/mpu_opps
+
+#speeds
+#echo 0 1350000 > /proc/overclock/freq_table
+#echo 1 1128000 > /proc/overclock/freq_table
+#echo 2 886000 > /proc/overclock/freq_table
+#echo 3 645000 > /proc/overclock/freq_table
+#echo 4 300000 > /proc/overclock/freq_table
